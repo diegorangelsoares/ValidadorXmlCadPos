@@ -22,6 +22,11 @@ import java.util.List;
  */
 public class LerArquivoXML {
 
+    public static String TAG_PAGAMENTO = "PgtoFatFchdAnt";
+    public static String TAG_XML = "<?xml";
+
+    public static String CAMINHO_ARQUIVOS = "/home/local/CONDUCTOR/diego.freire/Documentos/XMLsPositivo/";
+
     public LerArquivoXML(){};
 
     //Percorrer todas as linhas do arquivo
@@ -57,7 +62,7 @@ public class LerArquivoXML {
                         f = verificaConteudoDaLinhaFaturasFechadasAnteriores(linha, f);
                         //
                         if (!f.isStatusMontagemFatura()){
-                            if (linha.contains("PgtoFatFchdAnt")){
+                            if (linha.contains(LerArquivoXML.TAG_PAGAMENTO)){
                                 p = verificaConteudoDaLinhaPagamentosDasFaturasFechadasAnteriores(linha, p);
                                 pagamentos.add(p);
                                 p = new Pagamento();
@@ -99,7 +104,7 @@ public class LerArquivoXML {
         String conteudoTag = "";
         try {
             //Verificar o cabeçalho do xml
-            if (linha.contains("?xml")) {
+            if (linha.contains(LerArquivoXML.TAG_XML)) {
                 //System.out.println("Linha 0: " + linha);
                 if (linha.contains("version")) {
 
