@@ -38,4 +38,14 @@ public class Pagamento {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Pagamento{" +
+                "id=" + id +
+                ", Dtpgtofatfchdant='" + Dtpgtofatfchdant + '\'' +
+                ", VlPgtoFatFchDant='" + VlPgtoFatFchDant + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

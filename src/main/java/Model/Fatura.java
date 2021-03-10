@@ -12,6 +12,7 @@ public class Fatura {
     public String VlTtlPgrFatFchdAnt;
     public String VlMinPgrFatFchdAnt;
     public String Tipo;
+    public boolean statusMontagemFatura;
 
     public List<Pagamento> pagamentos;
 
@@ -61,5 +62,26 @@ public class Fatura {
 
     public void setPagamentos(List<Pagamento> pagamentos) {
         this.pagamentos = pagamentos;
+    }
+
+    public boolean isStatusMontagemFatura() {
+        return statusMontagemFatura;
+    }
+
+    public void setStatusMontagemFatura(boolean statusMontagemFatura) {
+        this.statusMontagemFatura = statusMontagemFatura;
+    }
+
+    @Override
+    public String toString() {
+        return "Fatura{" +
+                "id=" + id +
+                ", DtVnctFatFchdAnt='" + DtVnctFatFchdAnt + '\'' +
+                ", VlTtlPgrFatFchdAnt='" + VlTtlPgrFatFchdAnt + '\'' +
+                ", VlMinPgrFatFchdAnt='" + VlMinPgrFatFchdAnt + '\'' +
+                ", Tipo='" + Tipo + '\'' +
+                ", statusMontagemFatura=" + statusMontagemFatura +
+                ", pagamentos=" + pagamentos +
+                '}';
     }
 }

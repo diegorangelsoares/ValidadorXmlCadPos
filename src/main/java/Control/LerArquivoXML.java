@@ -5,7 +5,9 @@
 package Control;
 
 import Model.Cliente;
+import Model.Fatura;
 import Model.Operacao;
+import Model.Pagamento;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,8 +22,6 @@ import java.util.List;
  */
 public class LerArquivoXML {
 
-
-
     public LerArquivoXML(){};
 
     //Percorrer todas as linhas do arquivo
@@ -34,6 +34,10 @@ public class LerArquivoXML {
             int numeroLinha = 0;
             boolean cabecalho = true;
             Cliente c  = new Cliente();
+            Fatura f = new Fatura();
+            List<Fatura> faturas = new ArrayList<>();
+            Pagamento p = new Pagamento();
+            List<Pagamento> pagamentos = new ArrayList<>();
             while (linha != null) {
                 if (!linha.equals("")){
                     //System.out.println("Linha "+numeroLinha+": "+linha);
@@ -47,11 +51,35 @@ public class LerArquivoXML {
 
                     //Verificar os dados dos clientes
                     c = verificaConteudoDaLinhaCliente(linha, c);
-                    if (c.isStatusMontagemCliente()){
+                    //Verificar as faturas
+                    if (!c.isStatusMontagemCliente()){
+                        //Verificar as faturas
+                        f = verificaConteudoDaLinhaFaturasFechadasAnteriores(linha, f);
+                        //
+                        if (!f.isStatusMontagemFatura()){
+                            if (linha.contains("PgtoFatFchdAnt")){
+                                p = verificaConteudoDaLinhaPagamentosDasFaturasFechadasAnteriores(linha, p);
+                                pagamentos.add(p);
+                                p = new Pagamento();
+                            }
+                        }else{
+                            //Se o status montagem da fatura está true é porque terminou de montar a fatura
+                            f.setPagamentos(pagamentos);
+                            faturas.add(f);
+                            pagamentos = new ArrayList<>();
+                            c.getOperacao().setFaturas(faturas);
+                            f = new Fatura();
+                            f.setStatusMontagemFatura(false);
+                        }
+                    }else{
+                        //Se o status montagem do cliente está true é porque terminou de montar o cliente
                         clientes.add(c);
                         c = new Cliente();
                         c.setStatusMontagemCliente(false);
+                        faturas = new ArrayList<>();
                     }
+
+
                 }
 
                 linha = lerArq.readLine();
@@ -251,6 +279,108 @@ public class LerArquivoXML {
 
         return c;
     }
+
+    public Fatura verificaConteudoDaLinhaFaturasFechadasAnteriores (String linha, Fatura f){
+        int posInicial = 0;
+        int posFinal = 0;
+        //Cliente c = new Cliente();
+        //c.setStatusMontagemCliente(false);
+        String conteudoTag = "";
+        try {
+            //Verificar o cabeçalho do xml
+            if (linha.contains("</FatFchdAnt>")) {
+                //Final do dado do cliente
+                f.setStatusMontagemFatura(true);
+            }
+
+            if (linha.contains("DtVnctFatFchdAnt")) {
+
+                posInicial = linha.indexOf("DtVnctFatFchdAnt=\"");
+                posFinal = linha.indexOf("\" VlTtlPgrFatFchdAnt");
+
+                conteudoTag = linha.substring(posInicial, posFinal);
+                conteudoTag = conteudoTag.replace("DtVnctFatFchdAnt=\"", "");
+                //System.out.println("IdfcCli: " + conteudoTag);
+                f.setDtVnctFatFchdAnt(conteudoTag);
+
+            }
+
+            if (linha.contains("VlTtlPgrFatFchdAnt")) {
+
+                posInicial = linha.indexOf("VlTtlPgrFatFchdAnt=\"");
+                posFinal = linha.indexOf("\" VlMinPgrFatFchdAnt");
+
+                conteudoTag = linha.substring(posInicial, posFinal);
+                conteudoTag = conteudoTag.replace("VlTtlPgrFatFchdAnt=\"", "");
+                //System.out.println("NmCli: " + conteudoTag);
+                f.setVlTtlPgrFatFchdAnt(conteudoTag);
+
+            }
+            if (linha.contains("VlMinPgrFatFchdAnt")) {
+
+                posInicial = linha.indexOf("VlMinPgrFatFchdAnt=\"");
+                posFinal = linha.indexOf("\">");
+
+                conteudoTag = linha.substring(posInicial, posFinal);
+                conteudoTag = conteudoTag.replace("VlMinPgrFatFchdAnt=\"", "");
+                f.setVlMinPgrFatFchdAnt(conteudoTag);
+
+            }
+
+
+        }catch (Exception e){
+            System.out.println("Erro: "+e.toString());
+            return f;
+        }
+
+        return f;
+    }
+
+    public Pagamento verificaConteudoDaLinhaPagamentosDasFaturasFechadasAnteriores(String linha, Pagamento p){
+        int posInicial = 0;
+        int posFinal = 0;
+        String conteudoTag = "";
+        try {
+            //Verificar o cabeçalho do xml
+//            if (linha.contains("</FatFchdAnt>")) {
+//                //Final do dado do cliente
+//                f.setStatusMontagemFatura(true);
+//            }
+
+            if (linha.contains("Dtpgtofatfchdant")) {
+
+                posInicial = linha.indexOf("Dtpgtofatfchdant=\"");
+                posFinal = linha.indexOf("\" VlPgtoFatFchDant");
+
+                conteudoTag = linha.substring(posInicial, posFinal);
+                conteudoTag = conteudoTag.replace("Dtpgtofatfchdant=\"", "");
+                //System.out.println("IdfcCli: " + conteudoTag);
+                p.setDtpgtofatfchdant(conteudoTag);
+
+            }
+
+            if (linha.contains("VlPgtoFatFchDant")) {
+
+                posInicial = linha.indexOf("VlPgtoFatFchDant=\"");
+                posFinal = linha.indexOf("\"/>");
+
+                conteudoTag = linha.substring(posInicial, posFinal);
+                conteudoTag = conteudoTag.replace("VlPgtoFatFchDant=\"", "");
+                //System.out.println("NmCli: " + conteudoTag);
+                p.setVlPgtoFatFchDant(conteudoTag);
+
+            }
+
+        }catch (Exception e){
+            System.out.println("Erro: "+e.toString());
+            return p;
+        }
+
+        return p;
+
+    }
+
+
 
 
 }
