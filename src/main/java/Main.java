@@ -1,4 +1,5 @@
 import Control.ConciliaXmlVsCards;
+import Control.Configuracoes;
 import Control.LerArquivoXML;
 import Dao.ClienteDao;
 import Dao.ConexaoBD;
@@ -17,7 +18,6 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        String nomeArquivo = "teste.xml";
 
         ClienteDao clienteDao = new ClienteDao();
 
@@ -25,7 +25,7 @@ public class Main {
 
         List<Cliente> clientes = new ArrayList<>();
 
-        clientes = ler.percorreArquivo(LerArquivoXML.CAMINHO_ARQUIVOS+nomeArquivo);
+        clientes = ler.percorreArquivo(Configuracoes.CAMINHO_ARQUIVOS+Configuracoes.NOME_ARQUIVO_XML);
 
         if (clientes != null && !clientes.isEmpty()){
             ConciliaXmlVsCards conciliaXmlVsCards = new ConciliaXmlVsCards();

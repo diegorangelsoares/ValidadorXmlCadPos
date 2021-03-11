@@ -59,7 +59,7 @@ public class ConciliaXmlVsCards {
 
     public String gerarArquivoDeCriticas (String erro){
 
-        String nomeDoArquivo = LerArquivoXML.CAMINHO_ARQUIVOS+new Date()+"criticas.txt";
+        String nomeDoArquivo = Configuracoes.CAMINHO_ARQUIVOS+new Date()+"criticas.txt";
         BufferedWriter buffWrite = null;
         try {
             buffWrite = new BufferedWriter(new FileWriter(nomeDoArquivo));
