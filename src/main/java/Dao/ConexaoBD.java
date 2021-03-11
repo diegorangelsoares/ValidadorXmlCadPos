@@ -1,26 +1,32 @@
 package Dao;
 
 
+import Control.Log;
+import Fabrica.DadosConexoes;
 import oracle.jdbc.pool.OracleDataSource;
 
 import java.sql.*;
-//import oracle.jdbc.pool.OracleDataSource;
-
-
 
 public class ConexaoBD {
 
+    public String usuarioOracle;
+    public String senhaOracle;
+    public String enderecoOracle;
+    public String portaOracle;
+    public String servicoOracle;
 
-    public String usuarioOracle = "bandeira";
-    public String senhaOracle = "bandeira";
-    public String urlOracle = "localhost"; //"172.30.0.250"
-    public String portaOracle = "1521";
-    public String servicoOracle = "ORCLCDB";
+    public ConexaoBD(){
+        usuarioOracle = DadosConexoes.BASE_USUARIO;
+        senhaOracle = DadosConexoes.BASE_SENHA;
+        enderecoOracle = DadosConexoes.BASE_URL;
+        portaOracle = DadosConexoes.BASE_PORTA;
+        servicoOracle = DadosConexoes.BASE_SID;
+    }
 
     public Connection conectaBanco(){
             OracleDataSource ods;
 
-            String url = "jdbc:oracle:thin:@"+urlOracle+":"+portaOracle+":"+servicoOracle+"";
+            String url = "jdbc:oracle:thin:@"+enderecoOracle+":"+portaOracle+":"+servicoOracle+"";
             try {
                 ods = new OracleDataSource();
                 String porta = "1521";
@@ -30,6 +36,7 @@ public class ConexaoBD {
                 Connection conn = ods.getConnection();
                 return conn;
             }catch( SQLException e){ //trata os erros SQL
+                Log.gerarArquivoLog("Erro na consulta ao banco: "+e.getMessage(), "Erro");
                 System.out.println("Erro na consulta ao banco: "+e.getMessage());
                 return null;
             }
@@ -39,6 +46,7 @@ public class ConexaoBD {
         try{
             con.close();
         } catch (SQLException ex) {
+            Log.gerarArquivoLog("Error: "+ex.getMessage(), "Erro");
             System.out.println("Error: "+ex.getMessage());
         }
     }
