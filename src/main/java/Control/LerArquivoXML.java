@@ -25,8 +25,6 @@ public class LerArquivoXML {
     public static String TAG_PAGAMENTO = "PgtoFatFchdAnt";
     public static String TAG_XML = "<?xml";
 
-    public static String CAMINHO_ARQUIVOS = "/home/local/CONDUCTOR/diego.freire/Documentos/XMLsPositivo/";
-
     public LerArquivoXML(){};
 
     //Percorrer todas as linhas do arquivo

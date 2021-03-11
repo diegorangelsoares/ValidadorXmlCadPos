@@ -13,7 +13,7 @@ public class Log {
 
     public static String gerarArquivoLog(String erro, String nomeArquivo){
 
-        String nomeDoArquivo = LerArquivoXML.CAMINHO_ARQUIVOS+new Date()+nomeArquivo+".txt";
+        String nomeDoArquivo = Configuracoes.CAMINHO_ARQUIVOS+new Date()+nomeArquivo+".txt";
         BufferedWriter buffWrite = null;
         String linha = "";
         try {
