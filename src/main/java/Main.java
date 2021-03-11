@@ -7,9 +7,11 @@ import Model.Cliente;
 import java.sql.SQLException;
 import java.util.*;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class Main {
-
-
 
     public static void main(String[] args) throws SQLException {
 
@@ -27,16 +29,7 @@ public class Main {
             ConciliaXmlVsCards conciliaXmlVsCards = new ConciliaXmlVsCards();
             conciliaXmlVsCards.consultaCardsParaBatimentos(clientes);
         }
-//        System.out.println("Clientes:\n");
-//        for (Cliente cli: clientes){
-//            System.out.println(cli.toString());
-////            System.out.println("Consultando cliente no cards...");
-////
-////            clienteDao.consultaCliente(Long.parseLong(cli.IdfcCli));
-////            String saldo = clienteDao.consultaSaldoFaturaAtivaCliente(Long.parseLong(cli.IdfcCli));
-////            System.out.println("Saldo no cards: "+saldo);
-//
-//        }
+
         System.out.println("Total de Clientes: "+clientes.size());
 
 

@@ -1,5 +1,9 @@
 package Fabrica;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class DadosConexoes {
 
     public static String BASE_URL ="jdbc:oracle:thin:@localhost:1521:ORCLCDB";

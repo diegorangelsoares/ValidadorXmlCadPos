@@ -5,6 +5,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class Log {
 
     public static String gerarArquivoLog(String erro, String nomeArquivo){

@@ -2,6 +2,10 @@ package Dao;
 
 import java.sql.*;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class ClienteDao {
 
     ConexaoBD conexao = new ConexaoBD();

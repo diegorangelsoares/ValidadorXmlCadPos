@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class ConciliaXmlVsCards {
 
     public void consultaCardsParaBatimentos(List<Cliente> clientes){

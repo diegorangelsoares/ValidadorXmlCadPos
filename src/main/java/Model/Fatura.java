@@ -2,6 +2,10 @@ package Model;
 
 import java.util.List;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class Fatura {
 
     public static String TIPO_ANTERIOR = "A";

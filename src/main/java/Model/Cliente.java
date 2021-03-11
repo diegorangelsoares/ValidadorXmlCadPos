@@ -1,5 +1,9 @@
 package Model;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class Cliente {
 
     public String IdfcCli;

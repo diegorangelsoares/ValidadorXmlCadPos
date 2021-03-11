@@ -2,6 +2,10 @@ package Model;
 
 import java.util.List;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class Operacao {
 
     public String NrUnco;

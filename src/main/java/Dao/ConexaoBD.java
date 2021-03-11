@@ -1,12 +1,15 @@
 package Dao;
 
-
 import Control.Log;
 import Fabrica.DadosConexoes;
 import oracle.jdbc.pool.OracleDataSource;
 
 import java.sql.*;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class ConexaoBD {
 
     public String usuarioOracle;
@@ -29,7 +32,6 @@ public class ConexaoBD {
             String url = "jdbc:oracle:thin:@"+enderecoOracle+":"+portaOracle+":"+servicoOracle+"";
             try {
                 ods = new OracleDataSource();
-                String porta = "1521";
                 ods.setURL(url);
                 ods.setUser(usuarioOracle);
                 ods.setPassword(senhaOracle);

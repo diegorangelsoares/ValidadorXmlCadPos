@@ -1,5 +1,9 @@
 package Model;
 
+/**
+ *
+ * @author Diego Rangel
+ */
 public class Pagamento {
 
     public int id;
