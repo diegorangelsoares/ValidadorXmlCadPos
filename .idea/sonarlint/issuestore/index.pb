@@ -1,0 +1,31 @@
+
+X
+(src/main/java/Control/LerArquivoXML.java,1/6/165a4a051b9671749371c31f4845d168083388ac
+G
+src/main/java/Main.java,e/4/e44a8606ce010ad9b89aafdfcee2ab49afbf6d10
+P
+ src/main/java/Model/Cliente.java,a/e/aea46c5d395b8b881ad88ed2e47755d58ed1f7f9
+Q
+!src/main/java/Dao/ClienteDao.java,4/1/416bd8c72cdf24030099bb9aa9173af69beba6bf
+P
+ src/main/java/Dao/ConexaoBD.java,d/3/d38a374cf3f54b1b3a90d1df9f3796677e8384d3
+‚
+Rtarget/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst,8/a/8ae396f369da14bb5c0973286facff8fb2c70d56
+X
+(src/main/java/Fabrica/DadosConexoes.java,b/3/b3e8230f91c44205b501c42c95a10177e829e4a2
+O
+src/main/java/Model/Fatura.java,d/5/d5e315ee6628a8538570b0651ab32590c02384c6
+€
+Ptarget/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst,3/d/3da01db98b88a8057c03354880f06dba49d3e795
+Q
+!src/main/java/Model/Operacao.java,a/1/a1428f0f54551bf22d3335c1246cced89cf46343
+R
+"src/main/java/Model/Pagamento.java,9/3/935cd1c7ce2430f9f8492d393220a85cb48c1166
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+F
+ValidatorXmlCadPos.iml,4/a/4adbad3241b1e9632e0c53a51241249e8dad30d7
+]
+-src/main/java/Control/ConciliaXmlVsCards.java,4/1/414b72a2594b755d66400ec2d4aa191c93852922

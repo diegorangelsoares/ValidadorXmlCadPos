@@ -1,0 +1,18 @@
+
+l	java:S116"RRename this field "IdfcCli" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í÷èûÿÿÿÿ
+f	java:S116"QRename this field "NtzRlc" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚÅà€
+j
+java:S1104"TMake operacao a static final constant or non-public and provide accessors if needed.(Ğƒÿë
+n
+java:S1104"SMake IdfcCli a static final constant or non-public and provide accessors if needed.(í÷èûÿÿÿÿ
+g
+java:S1104"QMake NmCli a static final constant or non-public and provide accessors if needed.(³‡¨Û
+|
+java:S1104	"aMake statusMontagemCliente a static final constant or non-public and provide accessors if needed.(úŸÈ–şÿÿÿÿ
+h
+java:S1104"RMake NtzRlc a static final constant or non-public and provide accessors if needed.(ÚÅà€
+e	java:S116"PRename this field "NmCli" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³‡¨Û
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“
+e	java:S116"QRename this field "TipCli" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú¾¼n
+g
+java:S1104"RMake TipCli a static final constant or non-public and provide accessors if needed.(Ú¾¼n

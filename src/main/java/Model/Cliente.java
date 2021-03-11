@@ -6,6 +6,7 @@ package Model;
  */
 public class Cliente {
 
+    //CPF
     public String IdfcCli;
     public String NmCli;
     public String NtzRlc;

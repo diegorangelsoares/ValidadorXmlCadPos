@@ -1,0 +1,17 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(·’ã§8Îß»á/
+E
+java:S1128"*Remove this unused import 'Dao.ConexaoBD'.(Õğ¢¾ıÿÿÿÿ
+‹
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(Á¯¦ş8Ş©¡â/
+N	java:S106("9Replace this use of System.out or System.err by a logger.(•ù•
+Q
+java:S1481"/Remove this unused "clienteDao" local variable.(­è¤¢şÿÿÿÿ8¸“™à/
+`
+java:S1854">Remove this useless assignment to local variable "clienteDao".(­è¤¢şÿÿÿÿ8¸“™à/
+0
+java:S1220""Move this file to a named package.
+R
+java:S1854"<Remove this useless assignment to local variable "clientes".(Ó‘éÍ
+c
+java:S2259("FA "NullPointerException" could be thrown; "clientes" is nullable here.(•ù•8·’¾á/

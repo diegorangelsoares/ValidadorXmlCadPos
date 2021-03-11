@@ -1,0 +1,40 @@
+
+D
+java:S1444".Make this "public static BASE_URL" field final( ¤Õ«
+H
+java:S1444"2Make this "public static BASE_USUARIO" field final(á“â¸
+F
+java:S1444"0Make this "public static BASE_SENHA" field final(ØúÍì
+F
+java:S1444"0Make this "public static BASE_PORTA" field final(ÐóÜÀ
+I
+java:S1444	".Make this "public static BASE_SID" field final(Ìå½¢úÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(åÀø¡ûÿÿÿÿ
+j
+java:S1104"TMake BASE_URL a static final constant or non-public and provide accessors if needed.( ¤Õ«
+n
+java:S1104"XMake BASE_USUARIO a static final constant or non-public and provide accessors if needed.(á“â¸
+l
+java:S1104"VMake BASE_SENHA a static final constant or non-public and provide accessors if needed.(ØúÍì
+l
+java:S1104"VMake BASE_PORTA a static final constant or non-public and provide accessors if needed.(ÐóÜÀ
+o
+java:S1104	"TMake BASE_SID a static final constant or non-public and provide accessors if needed.(Ìå½¢úÿÿÿÿ
+f
+java:S1104"PMake host a static final constant or non-public and provide accessors if needed.(Ö«êú
+g
+java:S1104"QMake porta a static final constant or non-public and provide accessors if needed.(³Û¤î
+n
+java:S1104"SMake usuario a static final constant or non-public and provide accessors if needed.(´šÉ›ûÿÿÿÿ
+l
+java:S1104"QMake senha a static final constant or non-public and provide accessors if needed.(…‡Ý£úÿÿÿÿ
+i
+java:S3008"SRename this field "BASE_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ¤Õ«
+m
+java:S3008"WRename this field "BASE_USUARIO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á“â¸
+k
+java:S3008"URename this field "BASE_SENHA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØúÍì
+k
+java:S3008"URename this field "BASE_PORTA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÐóÜÀ
+n
+java:S3008	"SRename this field "BASE_SID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ìå½¢úÿÿÿÿ

@@ -1,0 +1,21 @@
+
+k
+java:S1104"UMake urlOracle a static final constant or non-public and provide accessors if needed.(”õ±è
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿ Ø÷
+N	java:S106*"9Replace this use of System.out or System.err by a logger.(ëöÍš
+P	java:S125"<This block of commented-out lines of code should be removed.(Êã°E
+o
+java:S1104"YMake servicoOracle a static final constant or non-public and provide accessors if needed.(Ðœº
+r
+java:S1104"WMake senhaOracle a static final constant or non-public and provide accessors if needed.(ï¬û´úÿÿÿÿ
+T
+java:S1854"9Remove this useless assignment to local variable "porta".(ßøëßÿÿÿÿÿ
+o
+java:S1104"YMake usuarioOracle a static final constant or non-public and provide accessors if needed.(ÕŽ¬è
+E
+java:S1481"*Remove this unused "porta" local variable.(ßøëßÿÿÿÿÿ
+m
+java:S1104"WMake portaOracle a static final constant or non-public and provide accessors if needed.(ïÆ”¼
+w
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "conn".(¨µãóýÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(­§·ªûÿÿÿÿ

@@ -1,0 +1,33 @@
+
+r
+java:S1104"WMake TIPO_FUTURA a static final constant or non-public and provide accessors if needed.(Âı™ùÿÿÿÿ
+t
+java:S1104"^Make VlMinPgrFatFchdAnt a static final constant or non-public and provide accessors if needed.(¤Îş‰
+e
+java:S1104"PMake Tipo a static final constant or non-public and provide accessors if needed.(¼¸–#
+q
+java:S1104"VMake pagamentos a static final constant or non-public and provide accessors if needed.(ï¬¦Ûøÿÿÿÿ
+q
+java:S3008"VRename this field "TIPO_FUTURA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âı™ùÿÿÿÿ
+r
+java:S1104"\Make DtVnctFatFchdAnt a static final constant or non-public and provide accessors if needed.(ÌİÕ
+r	java:S116"]Rename this field "VlMinPgrFatFchdAnt" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤Îş‰
+c	java:S116"ORename this field "Tipo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼¸–#
+p	java:S116"[Rename this field "DtVnctFatFchdAnt" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌİÕ
+t
+java:S1104"YMake TIPO_ANTERIOR a static final constant or non-public and provide accessors if needed.(èõ’ıÿÿÿÿ
+i
+java:S1104
+"NMake id a static final constant or non-public and provide accessors if needed.(ÍéÌ‘øÿÿÿÿ
+s
+java:S3008"XRename this field "TIPO_ANTERIOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èõ’ıÿÿÿÿ
+t
+java:S1104"^Make VlTtlPgrFatFchdAnt a static final constant or non-public and provide accessors if needed.(şã±
+}
+java:S1104"`Make statusMontagemFatura a static final constant or non-public and provide accessors if needed.(«©û½8‹—çß/
+r	java:S116"]Rename this field "VlTtlPgrFatFchdAnt" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şã±
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“
+N
+java:S1444"3Make this "public static TIPO_ANTERIOR" field final(èõ’ıÿÿÿÿ
+L
+java:S1444"1Make this "public static TIPO_FUTURA" field final(Âı™ùÿÿÿÿ

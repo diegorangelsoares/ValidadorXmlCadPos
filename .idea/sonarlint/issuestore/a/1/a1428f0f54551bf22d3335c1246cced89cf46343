@@ -1,0 +1,24 @@
+
+n
+java:S1104"SMake faturas a static final constant or non-public and provide accessors if needed.(Äıˆ‹ıÿÿÿÿ
+p
+java:S1104"UMake NrPlstCrt a static final constant or non-public and provide accessors if needed.(îã§âûÿÿÿÿ
+m
+java:S1104"RMake NrUnco a static final constant or non-public and provide accessors if needed.(Œ½™ñøÿÿÿÿ
+i
+java:S1104"SMake SdoDvdr a static final constant or non-public and provide accessors if needed.(üæß…
+k	java:S116"QRename this field "NrUnco" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ½™ñøÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“
+n	java:S116"TRename this field "NrPlstCrt" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îã§âûÿÿÿÿ
+k	java:S116"QRename this field "DtCtrc" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­óúÿÿÿÿÿ
+m
+java:S1104
+"RMake DtAprc a static final constant or non-public and provide accessors if needed.(ÆÈĞ¼ıÿÿÿÿ
+k	java:S116
+"QRename this field "DtAprc" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÈĞ¼ıÿÿÿÿ
+m
+java:S1104"RMake DtCtrc a static final constant or non-public and provide accessors if needed.(­óúÿÿÿÿÿ
+m
+java:S1104	"RMake CdMdld a static final constant or non-public and provide accessors if needed.(£Å«Áøÿÿÿÿ
+k	java:S116	"QRename this field "CdMdld" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£Å«Áøÿÿÿÿ
+g	java:S116"RRename this field "SdoDvdr" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üæß…
