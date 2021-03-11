@@ -29,28 +29,21 @@ public class ConciliaXmlVsCards {
             if (idCliente != 0){
                 //Percorrer para verificar as faturas e pagamentos
                 String saldo = clienteDao.consultaSaldoFaturaAtivaCliente(idCliente);
-//                DecimalFormat df = new DecimalFormat("0.00");
-//                String valorFormatado = df.format(cli.getOperacao().getSdoDvdr());
 
                 //String string = "abcdef";
                 String saldoNoArquivo = cli.getOperacao().getSdoDvdr();
                 StringBuilder stringBuilder = new StringBuilder(saldoNoArquivo);
-                stringBuilder.insert(saldoNoArquivo.length() - 2, ',');
+                stringBuilder.insert(saldoNoArquivo.length() - 2, '.');
                 //System.out.println(stringBuilder.toString());
                 saldoNoArquivo = stringBuilder.toString();
 
                 if (!saldo.equals(saldoNoArquivo)){
                     criticas = criticas + "Saldo do cliente: "+cli.getIdfcCli()+" incorreto. Saldo no cards: "+saldo+" Saldo no arquivo: "+saldoNoArquivo+"\n";
                 }
-                //System.out.print(valorFormatado);
 
             }else{
                 criticas = criticas + "Cliente nao encontrato. CPF: "+cli.getIdfcCli()+" Final cartão: "+cli.getOperacao().getNrPlstCrt()+"\n";
             }
-            //String saldo = clienteDao.consultaSaldoFaturaAtivaCliente(Long.parseLong(cli.IdfcCli));
-            //System.out.println("Saldo no cards: "+saldo);
-
-            System.out.println("Consultando cliente no cards...");
 
 
         }
@@ -68,7 +61,6 @@ public class ConciliaXmlVsCards {
 
         String nomeDoArquivo = LerArquivoXML.CAMINHO_ARQUIVOS+new Date()+"criticas.txt";
         BufferedWriter buffWrite = null;
-        String linha = "";
         try {
             buffWrite = new BufferedWriter(new FileWriter(nomeDoArquivo));
             buffWrite.append(erro);

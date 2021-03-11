@@ -18,7 +18,7 @@ public class ClienteDao {
         //Preenche os dados
         while (rs.next()){
             String IDCLIENTETITULARPESSOAFISICA = rs.getString("IDCLIENTETITULARPESSOAFISICA");
-            System.out.println("IDCLIENTETITULARPESSOAFISICA: "+IDCLIENTETITULARPESSOAFISICA);
+            //System.out.println("IDCLIENTETITULARPESSOAFISICA: "+IDCLIENTETITULARPESSOAFISICA);
         }
         conexao.desconectaBanco(conn);
     }
@@ -37,7 +37,7 @@ public class ClienteDao {
         //Preenche os dados
         while (rs.next()){
             String IDPESSOAFISICA = rs.getString("IDPESSOAFISICA");
-            System.out.println("IDPESSOAFISICA: "+IDPESSOAFISICA);
+            //System.out.println("IDPESSOAFISICA: "+IDPESSOAFISICA);
             if (IDPESSOAFISICA != null && !IDPESSOAFISICA.equals("")){
                 idCliente = Integer.parseInt(IDPESSOAFISICA);
             }
@@ -57,7 +57,7 @@ public class ClienteDao {
         //Preenche os dados
         while (rs.next()){
             saldo = rs.getString("SALDO");
-            System.out.println("SALDO: "+saldo);
+            //System.out.println("SALDO: "+saldo);
         }
         conexao.desconectaBanco(conn);
         return saldo;
