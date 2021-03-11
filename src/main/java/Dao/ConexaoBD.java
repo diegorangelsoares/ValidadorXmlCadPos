@@ -29,7 +29,8 @@ public class ConexaoBD {
     public Connection conectaBanco(){
             OracleDataSource ods;
 
-            String url = "jdbc:oracle:thin:@"+enderecoOracle+":"+portaOracle+":"+servicoOracle+"";
+            String url = "jdbc:oracle:thin:@"+enderecoOracle+":"+portaOracle+":"+servicoOracle;
+            //String url = DadosConexoes.BASE_URL_COMPLETA_TESTE;
             try {
                 ods = new OracleDataSource();
                 ods.setURL(url);

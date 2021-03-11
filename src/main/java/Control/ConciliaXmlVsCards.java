@@ -1,10 +1,12 @@
 package Control;
 
+import Dao.ClienteDao;
 import Model.Cliente;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
@@ -14,17 +16,21 @@ import java.util.List;
  */
 public class ConciliaXmlVsCards {
 
-    public void consultaCardsParaBatimentos(List<Cliente> clientes){
+    public void consultaCardsParaBatimentos(List<Cliente> clientes) throws SQLException {
 
         String criticas = "";
+        ClienteDao clienteDao = new ClienteDao();
 
         for (Cliente cli: clientes){
-            //System.out.println(cli.toString());
-//            System.out.println("Consultando cliente no cards...");
-//
-//            clienteDao.consultaCliente(Long.parseLong(cli.IdfcCli));
-//            String saldo = clienteDao.consultaSaldoFaturaAtivaCliente(Long.parseLong(cli.IdfcCli));
-//            System.out.println("Saldo no cards: "+saldo);
+
+            System.out.println("Consultando cliente no cards...");
+
+            boolean clienteEncontrato = clienteDao.consultaClientePorCPFeCartao(cli.getIdfcCli(), cli.getOperacao().getNrPlstCrt());
+            if (clienteEncontrato == false){
+                criticas = criticas + "Cliente nao encontrato. CPF: "+cli.getIdfcCli()+" Final cartão: "+cli.getOperacao().getNrPlstCrt()+"\n";
+            }
+            //String saldo = clienteDao.consultaSaldoFaturaAtivaCliente(Long.parseLong(cli.IdfcCli));
+            //System.out.println("Saldo no cards: "+saldo);
 
             System.out.println("Consultando cliente no cards...");
 
