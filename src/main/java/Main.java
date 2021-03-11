@@ -5,6 +5,8 @@ import Dao.ConexaoBD;
 import Model.Cliente;
 
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.*;
 
 /**
@@ -31,8 +33,6 @@ public class Main {
         }
 
         System.out.println("Total de Clientes: "+clientes.size());
-
-
 
     }
 }

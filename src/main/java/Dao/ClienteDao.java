@@ -23,26 +23,27 @@ public class ClienteDao {
         conexao.desconectaBanco(conn);
     }
 
-    public boolean consultaClientePorCPFeCartao (String cpf, String finalNumeroCartao) throws SQLException {
-        boolean clienteEncontrato = false;
+    public int consultaClientePorCPFeCartao (String cpf, String finalNumeroCartao) throws SQLException {
+        int idCliente = 0;
         Connection conn = conexao.conectaBanco();
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM T_CLIENTETITULARPESSOAFISICA CLI, T_CARTAOLOJA CA, T_PESSOAFISICA PF\n" +
-                "     WHERE CLI.IDCLIENTETITULARPESSOAFISICA = CA.IDCLIENTEPESSOAFISICA\n" +
-                "        AND CLI.IDCLIENTETITULARPESSOAFISICA = PF.IDPESSOAFISICA\n" +
+        String query = "SELECT DISTINCT (PF.IDPESSOAFISICA) IDPESSOAFISICA " +
+                "   FROM T_CARTAOLOJA CA, T_PESSOAFISICA PF\n" +
+                "     WHERE PF.IDPESSOAFISICA = CA.IDCLIENTEPESSOAFISICA\n" +
                 "        AND PF.CPF = '"+cpf+"'\n" +
                 "        AND CA.NUMEROTRUNCADO IS NOT NULL\n" +
-                "        AND SUBSTR(CA.NUMEROTRUNCADO, 13, 17) = '"+finalNumeroCartao+"'");
+                "        AND SUBSTR(CA.NUMEROTRUNCADO, 13, 17) = '"+finalNumeroCartao+"'";
+        PreparedStatement stmt = conn.prepareStatement(query);
         ResultSet rs = stmt.executeQuery();
         //Preenche os dados
         while (rs.next()){
-            String IDCLIENTETITULARPESSOAFISICA = rs.getString("IDCLIENTETITULARPESSOAFISICA");
-            System.out.println("IDCLIENTETITULARPESSOAFISICA: "+IDCLIENTETITULARPESSOAFISICA);
-            if (IDCLIENTETITULARPESSOAFISICA != null && !IDCLIENTETITULARPESSOAFISICA.equals("")){
-                clienteEncontrato = true;
+            String IDPESSOAFISICA = rs.getString("IDPESSOAFISICA");
+            System.out.println("IDPESSOAFISICA: "+IDPESSOAFISICA);
+            if (IDPESSOAFISICA != null && !IDPESSOAFISICA.equals("")){
+                idCliente = Integer.parseInt(IDPESSOAFISICA);
             }
         }
         conexao.desconectaBanco(conn);
-        return clienteEncontrato;
+        return idCliente;
     }
 
     public String consultaSaldoFaturaAtivaCliente (long idCliente) throws SQLException {

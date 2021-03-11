@@ -7,6 +7,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -24,9 +25,26 @@ public class ConciliaXmlVsCards {
         for (Cliente cli: clientes){
 
             System.out.println("Consultando cliente no cards...");
+            int idCliente = clienteDao.consultaClientePorCPFeCartao(cli.getIdfcCli(), cli.getOperacao().getNrPlstCrt());
+            if (idCliente != 0){
+                //Percorrer para verificar as faturas e pagamentos
+                String saldo = clienteDao.consultaSaldoFaturaAtivaCliente(idCliente);
+//                DecimalFormat df = new DecimalFormat("0.00");
+//                String valorFormatado = df.format(cli.getOperacao().getSdoDvdr());
 
-            boolean clienteEncontrato = clienteDao.consultaClientePorCPFeCartao(cli.getIdfcCli(), cli.getOperacao().getNrPlstCrt());
-            if (clienteEncontrato == false){
+                //String string = "abcdef";
+                String saldoNoArquivo = cli.getOperacao().getSdoDvdr();
+                StringBuilder stringBuilder = new StringBuilder(saldoNoArquivo);
+                stringBuilder.insert(saldoNoArquivo.length() - 2, ',');
+                //System.out.println(stringBuilder.toString());
+                saldoNoArquivo = stringBuilder.toString();
+
+                if (!saldo.equals(saldoNoArquivo)){
+                    criticas = criticas + "Saldo do cliente: "+cli.getIdfcCli()+" incorreto. Saldo no cards: "+saldo+" Saldo no arquivo: "+saldoNoArquivo+"\n";
+                }
+                //System.out.print(valorFormatado);
+
+            }else{
                 criticas = criticas + "Cliente nao encontrato. CPF: "+cli.getIdfcCli()+" Final cartão: "+cli.getOperacao().getNrPlstCrt()+"\n";
             }
             //String saldo = clienteDao.consultaSaldoFaturaAtivaCliente(Long.parseLong(cli.IdfcCli));
